@@ -70,27 +70,27 @@
 				<td><input type="text" name="isbn"></td>
 			</tr>
 			<tr>
-				<th>Title</th>
+				<th>Titulo</th>
 				<td><input type="text" name="title" required></td>
 			</tr>
 			<tr>
-				<th>Author</th>
+				<th>Autor</th>
 				<td><input type="text" name="author" required></td>
 			</tr>
 			<tr>
-				<th>Image</th>
+				<th>Imagen</th>
 				<td><input type="file" name="image"></td>
 			</tr>
 			<tr>
-				<th>Description</th>
+				<th>Descripción</th>
 				<td><textarea name="descr" cols="40" rows="5"></textarea></td>
 			</tr>
 			<tr>
-				<th>Price</th>
+				<th>Precio</th>
 				<td><input type="text" name="price" required></td>
 			</tr>
 			<tr>
-				<th>Publisher</th>
+				<th>Editorial</th>
 				<td><input type="text" name="publisher" required></td>
 			</tr>
 		</table>
