@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	require_once "./functions/admin.php";
-	$title = "List book";
+	$title = "Lista de libros";
 	require_once "./template/header.php";
 	require_once "./functions/database_functions.php";
 	$conn = db_connect();
@@ -12,12 +12,12 @@
 	<table class="table" style="margin-top: 20px">
 		<tr>
 			<th>ISBN</th>
-			<th>Title</th>
-			<th>Author</th>
-			<th>Image</th>
-			<th>Description</th>
-			<th>Price</th>
-			<th>Publisher</th>
+			<th>Título</th>
+			<th>Autor</th>
+			<th>Imagen</th>
+			<th>Descripción</th>
+			<th>Precio</th>
+			<th>Editorial</th>
 			<th>&nbsp;</th>
 			<th>&nbsp;</th>
 		</tr>
@@ -30,8 +30,8 @@
 			<td><?php echo $row['book_descr']; ?></td>
 			<td><?php echo $row['book_price']; ?></td>
 			<td><?php echo getPubName($conn, $row['publisherid']); ?></td>
-			<td><a href="admin_edit.php?bookisbn=<?php echo $row['book_isbn']; ?>">Edit</a></td>
-			<td><a href="admin_delete.php?bookisbn=<?php echo $row['book_isbn']; ?>">Delete</a></td>
+			<td><a href="admin_edit.php?bookisbn=<?php echo $row['book_isbn']; ?>">Editar</a></td>
+			<td><a href="admin_delete.php?bookisbn=<?php echo $row['book_isbn']; ?>">Eliminar</a></td>
 		</tr>
 		<?php } ?>
 	</table>
