@@ -7,7 +7,7 @@
 	$query = "DELETE FROM books WHERE book_isbn = '$book_isbn'";
 	$result = mysqli_query($conn, $query);
 	if(!$result){
-		echo "delete data unsuccessfully " . mysqli_error($conn);
+		echo "No se elimino correctamente " . mysqli_error($conn);
 		exit;
 	}
 	header("Location: admin_book.php");
