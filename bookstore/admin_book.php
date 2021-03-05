@@ -7,8 +7,8 @@
 	$conn = db_connect();
 	$result = getAll($conn);
 ?>
-	<p class="lead"><a href="admin_add.php">Add new book</a></p>
-	<a href="admin_signout.php" class="btn btn-primary">Sign out!</a>
+	<p class="lead"><a href="admin_add.php">Agregar nuevo libro</a></p>
+	<a href="admin_signout.php" class="btn btn-primary">Iniciar sesión</a>
 	<table class="table" style="margin-top: 20px">
 		<tr>
 			<th>ISBN</th>
