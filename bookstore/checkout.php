@@ -19,9 +19,9 @@
 ?>
 	<table class="table">
 		<tr>
-			<th>Item</th>
-			<th>Price</th>
-	    	<th>Quantity</th>
+			<th>Artículo</th>
+			<th>Precio</th>
+	    	<th>Cantidad</th>
 	    	<th>Total</th>
 	    </tr>
 	    	<?php
@@ -45,7 +45,7 @@
 	</table>
 	<form method="post" action="purchase.php" class="form-horizontal">
 		<?php if(isset($_SESSION['err']) && $_SESSION['err'] == 1){ ?>
-			<p class="text-danger">All fields have to be filled</p>
+			<p class="text-danger">Todos los campos deben completarse</p>
 			<?php } ?>
 		<div class="form-group">
 			<label for="name" class="control-label col-md-4">Nombre</label>
