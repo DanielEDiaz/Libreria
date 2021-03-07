@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	if(!isset($_POST['submit'])){
-		echo "Something wrong! Check again!";
+		echo "¡Algo ha salido mal! ¡intentalo otra vez!";
 		exit;
 	}
 	require_once "./functions/database_functions.php";
@@ -11,7 +11,7 @@
 	$pass = trim($_POST['pass']);
 
 	if($name == "" || $pass == ""){
-		echo "Name or Pass is empty!";
+		echo "¡El campo de Nombre o contraseña está vacío!";
 		exit;
 	}
 
@@ -23,13 +23,13 @@
 	$query = "SELECT name, pass from admin";
 	$result = mysqli_query($conn, $query);
 	if(!$result){
-		echo "Empty data " . mysqli_error($conn);
+		echo "Datos no encontrados" . mysqli_error($conn);
 		exit;
 	}
 	$row = mysqli_fetch_assoc($result);
 
 	if($name != $row['name'] && $pass != $row['pass']){
-		echo "Name or pass is wrong. Check again!";
+		echo "El usuario o la contraseña son incorrectos. ¡Intente otra vez!";
 		$_SESSION['admin'] = false;
 		exit;
 	}
