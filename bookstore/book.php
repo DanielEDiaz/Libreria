@@ -8,13 +8,13 @@
   $query = "SELECT * FROM books WHERE book_isbn = '$book_isbn'";
   $result = mysqli_query($conn, $query);
   if(!$result){ 
-    echo "Error, No Se Puede Recuperar los Datos" . mysqli_error($conn);
+    echo "No se puede recuperar los datos" . mysqli_error($conn);
     exit;
   }
 
   $row = mysqli_fetch_assoc($result);
   if(!$row){
-    echo "Libro Vacío";
+    echo "Libro vacío";
     exit;
   }
 
@@ -28,9 +28,9 @@
           <img class="img-responsive img-thumbnail" src="./bootstrap/img/<?php echo $row['book_image']; ?>">
         </div>
         <div class="col-md-6">
-          <h4>Book Description</h4>
+          <h4>Descripción del libro</h4>
           <p><?php echo $row['book_descr']; ?></p>
-          <h4>Book Details</h4>
+          <h4>Detalles del libro</h4>
           <table class="table">
           	<?php foreach($row as $key => $value){
               if($key == "book_descr" || $key == "book_image" || $key == "publisherid" || $key == "book_title"){
