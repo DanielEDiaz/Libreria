@@ -58,9 +58,9 @@
    	<form action="cart.php" method="post">
 	   	<table class="table">
 	   		<tr>
-	   			<th>Item</th>
-	   			<th>Price</th>
-	  			<th>Quantity</th>
+	   			<th>Artículo</th>
+	   			<th>Precio</th>
+	  			<th>Cantidad</th>
 	   			<th>Total</th>
 	   		</tr>
 	   		<?php
@@ -82,11 +82,11 @@
 		    	<th><?php echo "$" . $_SESSION['total_price']; ?></th>
 		    </tr>
 	   	</table>
-	   	<input type="submit" class="btn btn-primary" name="save_change" value="Save Changes">
+	   	<input type="submit" class="btn btn-primary" name="save_change" value="Cambios guardados">
 	</form>
 	<br/><br/>
-	<a href="checkout.php" class="btn btn-primary">Go To Checkout</a> 
-	<a href="books.php" class="btn btn-primary">Continue Shopping</a>
+	<a href="checkout.php" class="btn btn-primary">Ir a caja</a> 
+	<a href="books.php" class="btn btn-primary">Continuar comprando</a>
 <?php
 	} else {
 		echo "<p class=\"text-warning\">¡Su carrito esta vacío! ¡Por favor asegúrese de agregar algunos libros!</p>";
