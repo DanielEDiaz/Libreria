@@ -30,7 +30,7 @@
 					$book = mysqli_fetch_assoc(getBookByIsbn($conn, $isbn));
 			?>
 		<tr>
-			<td><?php echo $book['book_title'] . " by " . $book['book_author']; ?></td>
+			<td><?php echo $book['book_title'] . " por" . $book['book_author']; ?></td>
 			<td><?php echo "$" . $book['book_price']; ?></td>
 			<td><?php echo $qty; ?></td>
 			<td><?php echo "$" . $qty * $book['book_price']; ?></td>
