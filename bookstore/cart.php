@@ -48,7 +48,7 @@
 	}
 
 	// print out header here
-	$title = "Your shopping cart";
+	$title = "Tu carrito de compra";
 	require "./template/header.php";
 
 	if(isset($_SESSION['cart']) && (array_count_values($_SESSION['cart']))){
@@ -89,7 +89,7 @@
 	<a href="books.php" class="btn btn-primary">Continue Shopping</a>
 <?php
 	} else {
-		echo "<p class=\"text-warning\">Your cart is empty! Please make sure you add some books in it!</p>";
+		echo "<p class=\"text-warning\">¡Su carrito esta vacío! ¡Por favor asegúrese de agregar algunos libros!</p>";
 	}
 	if(isset($conn)){ mysqli_close($conn); }
 	require_once "./template/footer.php";
