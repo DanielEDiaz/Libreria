@@ -12,7 +12,7 @@
 	session_start();
 	require_once "./functions/database_functions.php";
 	// print out header here
-	$title = "Checking out";
+	$title = "Registro de salida";
 	require "./template/header.php";
 
 	if(isset($_SESSION['cart']) && (array_count_values($_SESSION['cart']))){
@@ -48,31 +48,31 @@
 			<p class="text-danger">All fields have to be filled</p>
 			<?php } ?>
 		<div class="form-group">
-			<label for="name" class="control-label col-md-4">Name</label>
+			<label for="name" class="control-label col-md-4">Nombre</label>
 			<div class="col-md-4">
 				<input type="text" name="name" class="col-md-4" class="form-control">
 			</div>
 		</div>
 		<div class="form-group">
-			<label for="address" class="control-label col-md-4">Address</label>
+			<label for="address" class="control-label col-md-4">Dirección</label>
 			<div class="col-md-4">
 				<input type="text" name="address" class="col-md-4" class="form-control">
 			</div>
 		</div>
 		<div class="form-group">
-			<label for="city" class="control-label col-md-4">City</label>
+			<label for="city" class="control-label col-md-4">Ciudad</label>
 			<div class="col-md-4">
 				<input type="text" name="city" class="col-md-4" class="form-control">
 			</div>
 		</div>
 		<div class="form-group">
-			<label for="zip_code" class="control-label col-md-4">Zip Code</label>
+			<label for="zip_code" class="control-label col-md-4">Código Postal</label>
 			<div class="col-md-4">
 				<input type="text" name="zip_code" class="col-md-4" class="form-control">
 			</div>
 		</div>
 		<div class="form-group">
-			<label for="country" class="control-label col-md-4">Country</label>
+			<label for="country" class="control-label col-md-4">País</label>
 			<div class="col-md-4">
 				<input type="text" name="country" class="col-md-4" class="form-control">
 			</div>
@@ -81,10 +81,10 @@
 			<input type="submit" name="submit" value="Purchase" class="btn btn-primary">
 		</div>
 	</form>
-	<p class="lead">Please press Purchase to confirm your purchase, or Continue Shopping to add or remove items.</p>
+	<p class="lead">Presione Comprar para confirmar su compra o Continuar Comprando para agregar o quitar artículos.</p>
 <?php
 	} else {
-		echo "<p class=\"text-warning\">Your cart is empty! Please make sure you add some books in it!</p>";
+		echo "<p class=\"text-warning\">¡Su carrito esta vacío! ¡Por favor asegúrese de agregar algunos libros!</p>";
 	}
 	if(isset($conn)){ mysqli_close($conn); }
 	require_once "./template/footer.php";
