@@ -5,7 +5,7 @@
 	if(isset($_GET['pubid'])){
 		$pubid = $_GET['pubid'];
 	} else {
-		echo "Wrong query! Check again!";
+		echo "¡Consulta incorrecta! ¡Intentalo otra vez!";
 		exit;
 	}
 
@@ -16,11 +16,11 @@
 	$query = "SELECT book_isbn, book_title, book_image FROM books WHERE publisherid = '$pubid'";
 	$result = mysqli_query($conn, $query);
 	if(!$result){
-		echo "Can't retrieve data " . mysqli_error($conn);
+		echo "No se pudo recopilar los datos " . mysqli_error($conn);
 		exit;
 	}
 	if(mysqli_num_rows($result) == 0){
-		echo "Empty books ! Please wait until new books coming!";
+		echo "¡No se han encontrado libros! ¡Espere hasta que lleguen libros nuevos!";
 		exit;
 	}
 
