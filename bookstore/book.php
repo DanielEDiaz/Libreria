@@ -7,14 +7,14 @@
 
   $query = "SELECT * FROM books WHERE book_isbn = '$book_isbn'";
   $result = mysqli_query($conn, $query);
-  if(!$result){
-    echo "Can't retrieve data " . mysqli_error($conn);
+  if(!$result){ 
+    echo "Error, No Se Puede Recuperar los Datos" . mysqli_error($conn);
     exit;
   }
 
   $row = mysqli_fetch_assoc($result);
   if(!$row){
-    echo "Empty book";
+    echo "Libro Vacío";
     exit;
   }
 
