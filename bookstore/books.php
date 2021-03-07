@@ -8,7 +8,7 @@
   $query = "SELECT book_isbn, book_image FROM books";
   $result = mysqli_query($conn, $query);
   if(!$result){
-    echo "Can't retrieve data " . mysqli_error($conn);
+    echo "No se pueden recuperar los datos " . mysqli_error($conn);
     exit;
   }
 
