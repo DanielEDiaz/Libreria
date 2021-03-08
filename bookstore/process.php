@@ -16,7 +16,7 @@
 	}
 
 	require_once "./functions/database_functions.php";
-	$title = "Purchase Process";
+	$title = "Proceso de compra";
 	require "./template/header.php";
 	$conn = db_connect();
 	extract($_SESSION['ship']);
@@ -49,8 +49,8 @@
 
 	session_unset();
 ?>
-	<p class="lead text-success">Your order has been processed sucessfully. Please check your email to get your order confirmation and shipping detail!. 
-	Your cart has been empty.</p>
+	<p class="lead text-success">Su pedido se ha procesado correctamente. Consulte su correo electrónico para obtener la confirmación de su pedido y los detalles del envío.
+	Tu carrito esta vacio.</p>
 
 <?php
 	if(isset($conn)){
