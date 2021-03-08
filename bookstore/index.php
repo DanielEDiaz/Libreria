@@ -1,7 +1,7 @@
 <?php
   session_start();
   $count = 0;
-  // connecto database
+
   
   $title = "Index";
   require_once "./template/header.php";
@@ -9,7 +9,7 @@
   $conn = db_connect();
   $row = select4LatestBook($conn);
 ?>
-      <!-- Example row of columns -->
+
       <p class="lead text-center text-muted">Latest books</p>
       <div class="row">
         <?php foreach($row as $book) { ?>
