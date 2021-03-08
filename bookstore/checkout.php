@@ -78,7 +78,7 @@
 			</div>
 		</div>
 		<div class="form-group">
-			<input type="submit" name="submit" value="Purchase" class="btn btn-primary">
+			<input type="submit" name="submit" value="Comprar" class="btn btn-primary">
 		</div>
 	</form>
 	<p class="lead">Presione Comprar para confirmar su compra o Continuar Comprando para agregar o quitar artículos.</p>
