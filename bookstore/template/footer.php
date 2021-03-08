@@ -5,7 +5,7 @@
             	<p>UPV</p>
         	</div>
         	<div class="text-muted pull-right">
-          		<a href="admin.php">Admin Login</a> 2020
+          		<a href="admin.php">Administrador</a>
         	</div>
       	</footer>
     </div>
