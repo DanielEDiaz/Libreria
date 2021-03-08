@@ -9,12 +9,12 @@
 	if(isset($_GET['bookisbn'])){
 		$book_isbn = $_GET['bookisbn'];
 	} else {
-		echo "Empty query!";
+		echo "Consulta vacia!";
 		exit;
 	}
 
 	if(!isset($book_isbn)){
-		echo "Empty isbn! check again!";
+		echo " ISBN Vacio! ¡Vuelve a comprobar!";
 		exit;
 	}
 
@@ -22,7 +22,7 @@
 	$query = "SELECT * FROM books WHERE book_isbn = '$book_isbn'";
 	$result = mysqli_query($conn, $query);
 	if(!$result){
-		echo "Can't retrieve data " . mysqli_error($conn);
+		echo "No se pueden recuperar los datos " . mysqli_error($conn);
 		exit;
 	}
 	$row = mysqli_fetch_assoc($result);
