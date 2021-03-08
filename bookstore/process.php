@@ -16,20 +16,16 @@
 	}
 
 	require_once "./functions/database_functions.php";
-	// print out header here
 	$title = "Purchase Process";
 	require "./template/header.php";
-	// connect database
 	$conn = db_connect();
 	extract($_SESSION['ship']);
 
-	// validate post section
 	$card_number = $_POST['card_number'];
 	$card_PID = $_POST['card_PID'];
 	$card_expire = strtotime($_POST['card_expire']);
 	$card_owner = $_POST['card_owner'];
 
-	// find customer
 	$customerid = getCustomerId($name, $address, $city, $zip_code, $country);
 	if($customerid == null) {
 		// insert customer into database and return customerid
@@ -38,7 +34,6 @@
 	$date = date("Y-m-d H:i:s");
 	insertIntoOrder($conn, $customerid, $_SESSION['total_price'], $date, $name, $address, $city, $zip_code, $country);
 
-	// take orderid from order to insert order items
 	$orderid = getOrderId($conn, $customerid);
 
 	foreach($_SESSION['cart'] as $isbn => $qty){
@@ -47,7 +42,7 @@
 		('$orderid', '$isbn', '$bookprice', '$qty')";
 		$result = mysqli_query($conn, $query);
 		if(!$result){
-			echo "Insert value false!" . mysqli_error($conn2);
+			echo "¡Inserte un valor falso!" . mysqli_error($conn2);
 			exit;
 		}
 	}
