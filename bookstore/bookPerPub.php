@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	require_once "./functions/database_functions.php";
-	// get pubid
+
 	if(isset($_GET['pubid'])){
 		$pubid = $_GET['pubid'];
 	} else {
@@ -9,7 +9,7 @@
 		exit;
 	}
 
-	// connect database
+
 	$conn = db_connect();
 	$pubName = getPubName($conn, $pubid);
 
