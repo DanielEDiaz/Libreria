@@ -24,7 +24,7 @@
 		exit;
 	}
 
-	$title = "Books Per Publisher";
+	$title = "Libros por editorial";
 	require "./template/header.php";
 ?>
 	<p class="lead"><a href="publisher_list.php">Editoriales</a> > <?php echo $pubName; ?></p>
