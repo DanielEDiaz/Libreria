@@ -1,7 +1,7 @@
 <?php
   session_start();
   $book_isbn = $_GET['bookisbn'];
-  // connecto database
+
   require_once "./functions/database_functions.php";
   $conn = db_connect();
 
@@ -21,7 +21,7 @@
   $title = $row['book_title'];
   require "./template/header.php";
 ?>
-      <!-- Example row of columns -->
+
       <p class="lead" style="margin: 25px 0"><a href="books.php">Books</a> > <?php echo $row['book_title']; ?></p>
       <div class="row">
         <div class="col-md-3 text-center">
