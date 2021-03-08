@@ -19,7 +19,6 @@
 	$pass = mysqli_real_escape_string($conn, $pass);
 	$pass = sha1($pass);
 
-	// get from db
 	$query = "SELECT name, pass from admin";
 	$result = mysqli_query($conn, $query);
 	if(!$result){
