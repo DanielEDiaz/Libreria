@@ -90,8 +90,8 @@
 				<td><input type="text" name="publisher" required></td>
 			</tr>
 		</table>
-		<input type="submit" name="add" value="Add new book" class="btn btn-primary">
-		<input type="reset" value="cancel" class="btn btn-default">
+		<input type="submit" name="add" value="Agregar nuevo libro" class="btn btn-primary">
+		<input type="reset" value="Cancelar" class="btn btn-default">
 	</form>
 	<br/>
 <?php
