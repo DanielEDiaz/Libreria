@@ -22,17 +22,16 @@
 		}
 	}
 	require_once "./functions/database_functions.php";
-	// print out header here
 	$title = "Purchase";
 	require "./template/header.php";
-	// connect database
+	// Conexion BD
 	if(isset($_SESSION['cart']) && (array_count_values($_SESSION['cart']))){
 ?>
 	<table class="table">
 		<tr>
 			<th>Item</th>
-			<th>Price</th>
-	    	<th>Quantity</th>
+			<th>Precio</th>
+	    	<th>Cantidad</th>
 	    	<th>Total</th>
 	    </tr>
 	    	<?php
@@ -41,7 +40,7 @@
 					$book = mysqli_fetch_assoc(getBookByIsbn($conn, $isbn));
 			?>
 		<tr>
-			<td><?php echo $book['book_title'] . " by " . $book['book_author']; ?></td>
+			<td><?php echo $book['book_title'] . " por " . $book['book_author']; ?></td>
 			<td><?php echo "$" . $book['book_price']; ?></td>
 			<td><?php echo $qty; ?></td>
 			<td><?php echo "$" . $qty * $book['book_price']; ?></td>
@@ -54,13 +53,13 @@
 			<th><?php echo "$" . $_SESSION['total_price']; ?></th>
 		</tr>
 		<tr>
-			<td>Shipping</td>
+			<td>Envio</td>
 			<td>&nbsp;</td>
 			<td>&nbsp;</td>
 			<td>20.00</td>
 		</tr>
 		<tr>
-			<th>Total Including Shipping</th>
+			<th>Total incluido el envio</th>
 			<th>&nbsp;</th>
 			<th>&nbsp;</th>
 			<th><?php echo "$" . ($_SESSION['total_price'] + 20); ?></th>
@@ -68,10 +67,10 @@
 	</table>
 	<form method="post" action="process.php" class="form-horizontal">
 		<?php if(isset($_SESSION['err']) && $_SESSION['err'] == 1){ ?>
-		<p class="text-danger">All fields have to be filled</p>
+		<p class="text-danger">Todos los campos tiene que ser llenados.</p>
 		<?php } ?>
         <div class="form-group">
-            <label for="card_type" class="col-lg-2 control-label">Type</label>
+            <label for="card_type" class="col-lg-2 control-label">Tipo</label>
             <div class="col-lg-10">
               	<select class="form-control" name="card_type">
                   	<option value="VISA">VISA</option>
@@ -81,7 +80,7 @@
             </div>
         </div>
         <div class="form-group">
-            <label for="card_number" class="col-lg-2 control-label">Number</label>
+            <label for="card_number" class="col-lg-2 control-label">Numero</label>
             <div class="col-lg-10">
               	<input type="text" class="form-control" name="card_number">
             </div>
@@ -93,28 +92,28 @@
             </div>
         </div>
         <div class="form-group">
-            <label for="card_expire" class="col-lg-2 control-label">Expiry Date</label>
+            <label for="card_expire" class="col-lg-2 control-label">Fecha de expiración.</label>
             <div class="col-lg-10">
               	<input type="date" name="card_expire" class="form-control">
             </div>
         </div>
         <div class="form-group">
-            <label for="card_owner" class="col-lg-2 control-label">Name</label>
+            <label for="card_owner" class="col-lg-2 control-label">Nombre</label>
             <div class="col-lg-10">
               	<input type="text" class="form-control" name="card_owner">
             </div>
         </div>
         <div class="form-group">
             <div class="col-lg-10 col-lg-offset-2">
-              	<button type="reset" class="btn btn-default">Cancel</button>
-              	<button type="submit" class="btn btn-primary">Purchase</button>
+              	<button type="reset" class="btn btn-default">Cancelar</button>
+              	<button type="submit" class="btn btn-primary">Comprar</button>
             </div>
         </div>
     </form>
-	<p class="lead">Please press Purchase to confirm your purchase, or Continue Shopping to add or remove items.</p>
+	<p class="lead">Por favor presione "Comprar" nuevamente para confirmar la compra, o "Continuar Comprando" para agregar o eliminar items.</p>
 <?php
 	} else {
-		echo "<p class=\"text-warning\">Your cart is empty! Please make sure you add some books in it!</p>";
+		echo "<p class=\"text-warning\">Su carrito esta vacio! Asegurese de agregar al menos un libro en el carrito</p>";
 	}
 	if(isset($conn)){ mysqli_close($conn); }
 	require_once "./template/footer.php";

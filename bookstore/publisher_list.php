@@ -6,18 +6,18 @@
 	$query = "SELECT * FROM publisher ORDER BY publisherid";
 	$result = mysqli_query($conn, $query);
 	if(!$result){
-		echo "Can't retrieve data " . mysqli_error($conn);
+		echo "No se pudo recuperar la información " . mysqli_error($conn);
 		exit;
 	}
 	if(mysqli_num_rows($result) == 0){
-		echo "Empty publisher ! Something wrong! check again";
+		echo "Algo anda mal, la editorial esta vacia. Por favor revise de nuevo.";
 		exit;
 	}
 
-	$title = "List Of Publishers";
+	$title = "Lista de editoriales";
 	require "./template/header.php";
 ?>
-	<p class="lead">List of Publisher</p>
+	<p class="lead">Lista de editoriales</p>
 	<ul>
 	<?php 
 		while($row = mysqli_fetch_assoc($result)){
@@ -25,7 +25,7 @@
 			$query = "SELECT publisherid FROM books";
 			$result2 = mysqli_query($conn, $query);
 			if(!$result2){
-				echo "Can't retrieve data " . mysqli_error($conn);
+				echo "No se pudo recuperar la información " . mysqli_error($conn);
 				exit;
 			}
 			while ($pubInBook = mysqli_fetch_assoc($result2)){
@@ -40,7 +40,7 @@
 		</li>
 	<?php } ?>
 		<li>
-			<a href="books.php">List full of books</a>
+			<a href="books.php">Lista completa de libros</a>
 		</li>
 	</ul>
 <?php
