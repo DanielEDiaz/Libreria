@@ -22,7 +22,7 @@
 		}
 	}
 	require_once "./functions/database_functions.php";
-	$title = "Purchase";
+	$title = "Comprar";
 	require "./template/header.php";
 	// Conexion BD
 	if(isset($_SESSION['cart']) && (array_count_values($_SESSION['cart']))){
