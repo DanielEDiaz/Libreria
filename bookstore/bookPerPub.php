@@ -27,7 +27,7 @@
 	$title = "Books Per Publisher";
 	require "./template/header.php";
 ?>
-	<p class="lead"><a href="publisher_list.php">Publishers</a> > <?php echo $pubName; ?></p>
+	<p class="lead"><a href="publisher_list.php">Editoriales</a> > <?php echo $pubName; ?></p>
 	<?php while($row = mysqli_fetch_assoc($result)){
 ?>
 	<div class="row">
@@ -36,7 +36,7 @@
 		</div>
 		<div class="col-md-7">
 			<h4><?php echo $row['book_title'];?></h4>
-			<a href="book.php?bookisbn=<?php echo $row['book_isbn'];?>" class="btn btn-primary">Get Details</a>
+			<a href="book.php?bookisbn=<?php echo $row['book_isbn'];?>" class="btn btn-primary">Obtener detalles</a>
 		</div>
 	</div>
 	<br>

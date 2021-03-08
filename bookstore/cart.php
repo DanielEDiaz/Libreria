@@ -85,7 +85,7 @@
 	   	<input type="submit" class="btn btn-primary" name="save_change" value="Cambios guardados">
 	</form>
 	<br/><br/>
-	<a href="checkout.php" class="btn btn-primary">Ir a caja</a> 
+	<a href="checkout.php" class="btn btn-primary">Comprar</a> 
 	<a href="books.php" class="btn btn-primary">Continuar comprando</a>
 <?php
 	} else {

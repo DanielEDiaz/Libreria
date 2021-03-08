@@ -7,7 +7,7 @@
 		<div class="col-md-6 text-center">
 			<form class="form-horizontal">
 			  	<fieldset>
-				    <legend>Contact</legend>
+				    <legend>Contacto</legend>
 				    <p class="lead">¡Me encantaría saber de ti! Complete el formulario para enviar un correo electrónico.</p>
 				    <div class="form-group">
 				      	<label for="inputName" class="col-lg-2 control-label">Nombre</label>
@@ -31,7 +31,7 @@
 				    <div class="form-group">
 				      	<div class="col-lg-10 col-lg-offset-2">
 				        	<button type="reset" class="btn btn-default">Cancelar</button>
-				        	<button type="submit" class="btn btn-primary">Eviar</button>
+				        	<button type="submit" class="btn btn-primary">Enviar</button>
 				      	</div>
 				    </div>
 			  	</fieldset>

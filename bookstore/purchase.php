@@ -110,7 +110,7 @@
             </div>
         </div>
     </form>
-	<p class="lead">Por favor presione "Comprar" nuevamente para confirmar la compra, o "Continuar Comprando" para agregar o eliminar items.</p>
+	<p class="lead">Por favor presione "Comprar" nuevamente para confirmar la compra, o "Cancelar" para agregar o eliminar items.</p>
 <?php
 	} else {
 		echo "<p class=\"text-warning\">Su carrito esta vacio! Asegurese de agregar al menos un libro en el carrito</p>";

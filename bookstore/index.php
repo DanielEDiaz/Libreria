@@ -10,7 +10,7 @@
   $row = select4LatestBook($conn);
 ?>
 
-      <p class="lead text-center text-muted">Latest books</p>
+      <p class="lead text-center text-muted">Ultimos libros</p>
       <div class="row">
         <?php foreach($row as $book) { ?>
       	<div class="col-md-3">

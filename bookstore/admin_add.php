@@ -25,7 +25,6 @@
 		$publisher = trim($_POST['publisher']);
 		$publisher = mysqli_real_escape_string($conn, $publisher);
 
-		// add image
 		if(isset($_FILES['image']) && $_FILES['image']['name'] != ""){
 			$image = $_FILES['image']['name'];
 			$directory_self = str_replace(basename($_SERVER['PHP_SELF']), '', $_SERVER['PHP_SELF']);
@@ -34,16 +33,13 @@
 			move_uploaded_file($_FILES['image']['tmp_name'], $uploadDirectory);
 		}
 
-		// find publisher and return pubid
-		// if publisher is not in db, create new
 		$findPub = "SELECT * FROM publisher WHERE publisher_name = '$publisher'";
 		$findResult = mysqli_query($conn, $findPub);
 		if(!$findResult){
-			// insert into publisher table and return id
 			$insertPub = "INSERT INTO publisher(publisher_name) VALUES ('$publisher')";
 			$insertResult = mysqli_query($conn, $insertPub);
 			if(!$insertResult){
-				echo "Can't add new publisher " . mysqli_error($conn);
+				echo "No se puede agregar la editorial " . mysqli_error($conn);
 				exit;
 			}
 			$publisherid = mysql_insert_id($conn);
@@ -56,7 +52,7 @@
 		$query = "INSERT INTO books VALUES ('" . $isbn . "', '" . $title . "', '" . $author . "', '" . $image . "', '" . $descr . "', '" . $price . "', '" . $publisherid . "')";
 		$result = mysqli_query($conn, $query);
 		if(!$result){
-			echo "Can't add new data " . mysqli_error($conn);
+			echo "No se pudo agregar nuevo informacion " . mysqli_error($conn);
 			exit;
 		} else {
 			header("Location: admin_book.php");

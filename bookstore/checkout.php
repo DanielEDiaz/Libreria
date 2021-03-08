@@ -1,6 +1,6 @@
 <?php
 	// the shopping cart needs sessions, to start one
-	/*
+	/* 
 		Array of session(
 			cart => array (
 				book_isbn (get from $_GET['book_isbn']) => number of books

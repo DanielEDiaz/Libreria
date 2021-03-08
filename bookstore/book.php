@@ -22,7 +22,7 @@
   require "./template/header.php";
 ?>
 
-      <p class="lead" style="margin: 25px 0"><a href="books.php">Books</a> > <?php echo $row['book_title']; ?></p>
+      <p class="lead" style="margin: 25px 0"><a href="books.php">Libros</a> > <?php echo $row['book_title']; ?></p>
       <div class="row">
         <div class="col-md-3 text-center">
           <img class="img-responsive img-thumbnail" src="./bootstrap/img/<?php echo $row['book_image']; ?>">
@@ -41,13 +41,13 @@
                   $key = "ISBN";
                   break;
                 case "book_title":
-                  $key = "Title";
+                  $key = "Titulo";
                   break;
                 case "book_author":
-                  $key = "Author";
+                  $key = "Autor";
                   break;
                 case "book_price":
-                  $key = "Price";
+                  $key = "Precio";
                   break;
               }
             ?>
@@ -62,7 +62,7 @@
           </table>
           <form method="post" action="cart.php">
             <input type="hidden" name="bookisbn" value="<?php echo $book_isbn;?>">
-            <input type="submit" value="Purchase / Add to cart" name="cart" class="btn btn-primary">
+            <input type="submit" value="Comprar / Agregar al carrito" name="cart" class="btn btn-primary">
           </form>
        	</div>
       </div>
